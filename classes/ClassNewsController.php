@@ -21,7 +21,7 @@ class ClassNewsController
         $editnews_id  = (int)$_GET['editnews'];
         // Помещаем в $get_page функцию, которая получает полученную id страницу
         $article = ClassNews::findByPk($editnews_id);
-        include ('../controllers/ContrEditNews.php');
+        include ('../admin/admin.php');
         $article->save();
     }
 } 
