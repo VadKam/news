@@ -32,9 +32,8 @@ var_dump($article);*/
 
 
 //Меняем статью по id
-$article = new ClassNews;
-$article::findByPk(80);
-var_dump($article::findByPk(80));
+$article = ClassNews::findByPk(80);
+var_dump($article);
 $article->title = 'Супер статья';
 $article->save();
 var_dump($article);
