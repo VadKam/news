@@ -6,6 +6,17 @@
  * Time: 14:24
  */
 require 'boots.php';
+include('controllers/ContrAllNews.php');
+
+
+
+
+
+
+
+
+
+
 /*
 $route = $_GET['r'];
 $routeParts = explode('/', $route);
@@ -16,28 +27,22 @@ $controller = new $controllerClassName;
 $controller->action($routeParts[1]);
 */
 
-/*
-$controller = new NewsController();
-$controller->action('all');
-*/
 
 
 
 //Выводим все статьи
-var_dump(ClassNews::findAll());
+//var_dump(ClassNews::findAll());
 
 //Выводим статью по id
 /*$article = ClassNews::findByPk(48) ;
 var_dump($article);*/
 
-
+/*
 //Меняем статью по id
 $article = ClassNews::findByPk(80);
-var_dump($article);
 $article->title = 'Супер статья';
 $article->save();
-var_dump($article);
-
+*/
 
 
 // Добавляем статью
