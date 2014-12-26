@@ -1,7 +1,33 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vladislav
- * Date: 24.12.2014
- * Time: 14:37
- */ 
+class DbConnection
+{
+    // Подключение к файлу
+    private function config()
+    {
+        return include __DIR__ . '/../config.php';
+    }
+
+    static  function getConnection()
+    {
+        try{
+            $config = static::config();
+            $dsn = 'mysql:dbname='.$config['db']['dbname'] . ';host='.$config['db']['host'];
+            $dbh = new PDO($dsn, $config['db']['user'], $config['db']['password']);
+            return $dbh;
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
