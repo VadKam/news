@@ -24,7 +24,7 @@ $controller->action('all');
 
 
 //Выводим все статьи
-//var_dump(ClassNews::findAll());
+var_dump(ClassNews::findAll());
 
 //Выводим статью по id
 /*$article = ClassNews::findByPk(48) ;

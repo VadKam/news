@@ -13,12 +13,10 @@ abstract class AbstractModel
         $sql = 'SELECT * FROM ' . static::$table;
         $db = static::getConnection();
         $sth = $db->prepare($sql);
+        $sth->setFetchMode(PDO::FETCH_CLASS, get_called_class()); // Делаем массив объектом
         $sth->execute();
         return $sth->fetchAll();
     }
-
-
-
 
 
 
@@ -27,11 +25,10 @@ abstract class AbstractModel
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
         $db = static::getConnection();
         $sth = $db->prepare($sql);
+        $sth->setFetchMode(PDO::FETCH_CLASS, get_called_class());
         $sth->execute([':id' => $id]);
         return $sth->fetch();
     }
-
-
 
 
     static protected $columns = [];
